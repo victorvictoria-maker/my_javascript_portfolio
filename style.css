@@ -50,7 +50,7 @@ main #card:nth-child(even) {
 }
 
 footer {
-    background-color: red;
+    background-color: rgba(1, 69, 61, 0.9);
 }
 
 /* large mobiles and tablets in portrait */
