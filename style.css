@@ -38,7 +38,6 @@ main #card {
 
 main #card:nth-child(even) {
     background-color: black;
-    color: rgb(218, 182, 224);
     border: black;
 }
 
@@ -47,6 +46,16 @@ main #card:nth-child(even) {
     font-size: 2em;
     position: relative;
     top: 40%;
+}
+
+#card p a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+#card:nth-child(even) p a {
+    color: rgb(218, 182, 224);
 }
 
 footer {
