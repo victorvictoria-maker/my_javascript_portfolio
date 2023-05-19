@@ -1,0 +1,201 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.wholecalculator {
+	border: 1px solid #9D979E;
+	height: 620px;
+	margin: 60px /*450px*/;
+	width: 320px;
+	background-color: #9D979E;
+	border-bottom-left-radius: 100%90px;
+	border-bottom-right-radius: 100%90px;
+	border-top-left-radius: 100%50px;
+	border-top-right-radius: 100%50px;
+}
+
+.innerpart {
+	background-color: #222328;
+	width: 93%;
+	height: 99%;
+	margin: 3px auto;
+	border-bottom-left-radius: 100%85px;
+	border-bottom-right-radius: 100%85px;
+	border-top-left-radius: 100%45px;
+	border-top-right-radius: 100%45px;
+}
+
+.upsection {
+	width: 90%;
+	height: 30%;
+/*	background-color: #ccc;*/
+	margin: auto;
+	border-top-left-radius: 100%50px;
+	border-top-right-radius: 100%50px;
+}
+
+.upsection .textdiv {
+	height: 30%;
+	/*border: 1px solid white;*/
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	padding: 10px;
+	line-height: 0.8em;
+	text-align: center;
+}
+
+
+/*where the texts are over the blank part*/
+.upsection .textdiv .textdiv1 {
+	width: 45%;
+}
+
+.upsection .textdiv .textdiv1 p {
+	margin-top: 10px;
+	margin-bottom: 17px;
+	font-size: 1.4em;
+}
+
+
+.upsection .textdiv .textdiv1 p, .upsection .textdiv .textdiv1 small {
+	color: #D2D2DC;
+}
+
+.upsection .textdiv .textdiv1 #natural {
+	color: #A4677B;
+	font-size: 0.8em;
+}
+
+.upsection .textdiv .textdiv2 {
+	width: 60%;
+	height: 100%;
+	/*border: 1px solid blue;*/
+}
+
+
+/*the blank space for calculating and showing results*/
+.upsection .calculatingdiv {
+	height: 50%;
+	background-color: rgb(125,129,139);
+	border-radius: 5px;
+	padding: 5px 10px;
+}
+
+.upsection .calculatingdiv .displaydiv {
+	height: 95%;
+	background-color: #DCE6DB;
+	border-radius: 5px;
+}
+
+.upsection .calculatingdiv .displaydiv .calculatearea {
+	height: 50%;
+	font-size: 1.4em;
+	padding: 5px 0px 0px 5px;
+}
+
+.upsection .calculatingdiv .displaydiv .result {
+	height: 47%;
+	font-size: 1.4em;
+	padding: 5px 0px 0px 5px;
+	float: right;
+}
+
+
+/*the down section*/
+.downsection {
+	width: 95%;
+	height: 70%;
+/*	background-color: blue;*/
+	margin: auto;
+	border-bottom-left-radius: 100%90px;
+	border-bottom-right-radius: 100%90px;
+}
+
+/*the control buttons*/
+
+.downsection .smallbutton, .downsection .smallbutton {
+	margin: 0px 8px;
+	margin-left: 5px;
+	color: #fff;
+}
+
+.downsection .smallbutton {
+	width: 35px;
+	height: 30px;
+	position: relative;
+	top: -11px;
+	border-radius: 48%;
+	background-color: #695EA2;
+	border: 1px solid #695EA2;
+}
+
+.downsection .bigbutton {
+	width: 60px;
+	height: 50px;
+	position: relative;
+	top: 15px;
+	border-radius: 50%;
+	background-color: #695EA2;
+	border: 1px solid #695EA2;
+} 
+
+/*yhe scientific functions*/
+.scientific {
+	padding: 5px 0px;
+	position: relative;
+	top: -20px;
+}
+
+.scientifics {
+	width: 95%;
+	margin: auto;
+}
+
+.scientifics input {
+	width: 40px;
+	height: 30px;
+	font-size: 1.0em;
+	/*font-weight: bold;*/
+	margin-top: 10px;
+	border-bottom-left-radius: 70px;
+	border-bottom-right-radius: 70px;
+	border-top-left-radius: 100%50px;
+	border-top-right-radius: 100%50px;
+	background-color: #2C2D32;
+	color: #F6F7F7;
+	padding: 2px 0px;
+}
+
+
+/*the numbers and operators for operation*/
+.operandsandoperators {
+	height: 55%;	
+	position: relative;
+	top: -20px;
+}
+
+.numoperators {
+	width: 95%;
+	margin: auto;
+}
+
+.numoperators input {
+	width: 49px;
+	height: 40px;
+	font-size: 1.2em;
+	/*font-weight: bold;*/
+	margin-top: 8px;
+	border-bottom-left-radius: 70px;
+	border-bottom-right-radius: 70px;
+	border-top-left-radius: 100%50px;
+	border-top-right-radius: 100%50px;
+	background-color: #2C2D32;
+	color: #F6F7F7;
+}
+
+#delete, #clear {
+	background-color: #E88E4C;
+	color: #000;
+}

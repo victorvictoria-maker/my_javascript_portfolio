@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<title>Scientific Calculator</title>
+</head>
+<body>
+
+<!-- the whole body of the calculator is here -->
+<div class="wholecalculator">
+
+	<!-- the dark inner part -->
+	<div class="innerpart">
+
+		<!-- where the operating buttons, calculating area and display divs are -->
+		<div class="upsection">
+			<!-- where the casio text is -->
+			<div class="textdiv">
+				<div class="textdiv1">
+					<p><b>VICKY'S</b></p>
+					<small><em>fx-300VV PLUS</em></small><br/>
+					<small id="natural"><em>NATURAL-V.P.A.M.</em></small>
+				</div>
+				<div class="textdiv2">
+				</div>
+			</div>
+
+			<!-- where the functions display -->
+			<div class="calculatingdiv">
+				<div class="displaydiv">
+					<div class="calculatearea" id="calculatearea"></div>
+					<div class="result" id="result"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="downsection">
+
+			<!-- the control buttons below the functions -->
+				<button class="smallbutton">Shift</button>
+				<button  class="smallbutton">Alpha</button>
+				<button  class="bigbutton"></button>
+				<button  class="smallbutton">Mode</button>
+				<button  class="smallbutton" id="on" onclick="onAndOff()">ON</button>
+
+			<!-- where the scientific operators are...cos and co.. -->
+			<div class="scientific">
+				<div class="scientifics">
+					<input type="button" name="" value="Abs">
+					<input type="button" name="" value="#">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="button" name="" value="#">
+					<input type="button" name="" value="log">
+				</div>
+				<div class="scientifics">
+					<input type="button" name="" value="#">
+					<input type="button" name="" value="sqrt" id="sqrt" onclick="findSqrt()">
+					<input type="button" name="" value="^2" id="square" onclick="findSquare()">
+					<input type="button" name="" value="^x" id="pwr" onclick="findPower()">
+					<input type="button" name="" value="log" onclick="showScientific('log(')">
+					<input type="button" name="" value="In" onclick="showScientific('In(')">
+				</div>
+				<div class="scientifics">
+					<input type="button" name="" value="(-)">
+					<input type="button" name="" value="#">
+					<input type="button" name="" value="hyp">
+					<input type="button" name="" value="sin" id="scien" onclick="showScientific('sin(')">
+					<input type="button" name="" value="cos" id="scien" onclick="showScientific('cos(')">
+					<input type="button" name="" value="tan" id="scien" onclick="showScientific('tan(')">
+				</div>
+				<div class="scientifics">
+					<input type="button" name="" value="RCL">
+					<input type="button" name="" value="ENG">
+					<input type="button" name="" value="(" id="value" onclick="showValue('(')">
+					<input type="button" name="" value=")" id="value" onclick="showValue(')')">
+					<input type="button" name="" value="S=D">
+					<input type="button" name="" value="M+">
+				</div>
+			</div>
+
+			<!-- section where the numbers and the operators are --> 
+			<div class="operandsandoperators">
+				<div class="numoperators">
+					<input type="button" name=""  value="7" id="value" onclick="showValue(7)">
+					<input type="button" name=""  value="8" id="value" onclick="showValue(8)">
+					<input type="button" name=""  value="9" id="value" onclick="showValue(9)">
+					<input type="button" name="" value="DEL" id="delete" onclick="removeLastValue()">
+					<input type="button" name="" value="AC" id="clear" onclick="clearOperation()">
+				</div>
+				<div class="numoperators">
+					<input type="button" name=""  value="4" id="value" onclick="showValue(4)">
+					<input type="button" name=""  value="5" id="value" onclick="showValue(5)">
+					<input type="button" name=""  value="6" id="value" onclick="showValue(6)">
+					<input type="button" name="" value="x" id="value" onclick="showValue('*')">
+					<input type="button" name="" value="/" id="value" onclick="showValue('/')">
+				</div>
+				<div class="numoperators">
+					<input type="button" name=""
+					 value="1" id="value" onclick="showValue(1)">
+					<input type="button" name=""  value="2" id="value" onclick="showValue(2)">
+					<input type="button" name=""  value="3" id="value" onclick="showValue(3)">
+					<input type="button" name="" value="+" id="value" onclick="showValue('+')">
+					<input type="button" name="" value="-" id="value" onclick="showValue('-')">
+				</div>
+				<div class="numoperators">
+					<input type="button" name=""  value="0" id="value" onclick="showValue(0)">
+					<input type="button" name=""  value="." id="value" onclick="showValue(.)">
+					<input type="button" name="" value="x10" >
+					<input type="button" name="" value="Ans" onclick="showRes()">
+					<input type="button" name="" value="=" id="equal" onclick="equalto()">
+				</div>
+			</div>
+		</div>
+
+		<!-- stop here -->
+	</div>
+</div>
+
+<script src="mainjava.js"></script>
+
+</body>
+</html>
