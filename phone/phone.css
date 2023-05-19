@@ -1,0 +1,1214 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	outline: none !important;
+	list-style-type: none;
+}
+ body {
+ 	color: #fff;
+	background-color: #000;
+}
+
+
+/*=====phone's homepage=====*/
+#container {
+	background-color: blue;
+	height: 510px;
+	width: 260px;
+	margin: 20px auto;
+	color: #000;
+	border-radius: 20px;
+}
+
+#phonewrapper {
+	background-color: #000;
+	border: 1px solid #000;
+	height: 99%;
+	width: 98%;	
+	position: relative;
+	top: 1px;
+	left: 2px;
+	border-radius: 20px;
+}	
+
+#offhomepage {
+	width: 255px;
+	height: 505px;
+	border-radius: 20px;
+	background-color: #000;
+}
+
+#homepage {
+	background-image: url(images/wallpaper.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 98%;
+	height: 87%;
+	position: relative;
+	top: 7%;
+	left: 2px;
+	border-radius: 7px;
+	display: none;
+}
+
+#simcards {
+	float: right;
+	height: 25px;
+	width: 20%;
+}
+
+
+#simcards ul li {
+	display: inline-block;
+	list-style-type: none;
+}
+
+#simcards img {
+	width: 8px;
+	height: 8px;
+}
+
+#timewrapper {
+	position: absolute;
+	top: 25px;
+	left: 20px;
+	width: 97px;
+	height: 70px;
+}
+
+#timediv {
+	width: 100%;
+	height: 65%;
+	display: flex;
+	flex-direction: row;
+}
+
+#hour {
+	font-size: 2.0rem;
+	height: 100%;
+	width: 42px;
+	color: #fff;
+}
+
+
+#minute {
+	color: #fff;
+	height: 100%;
+	width: 30px;
+	font-size: 2.0rem;
+}
+
+#amOrpm {
+	color: #fff; 
+	height: 40%;
+	width: 20px;
+	font-size: 0.8rem;
+	position: relative;
+	top: 10px;
+	left: 7px;
+}
+
+
+#datediv {
+	height: 25%;
+	display: flex;
+	flex-direction: row;
+}
+
+#day {
+	height: 100%;
+	width: 38px;
+	color: #fff;
+	text-transform: uppercase;
+}
+#month {
+	height: 100%;
+	width: 40px;
+	color: #fff;
+	margin-left: 10px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#date {
+	height: 100%;
+	width: 25px;
+	color: #fff;
+	position: relative;
+	left: 3px;
+}
+
+
+#icons {
+	height: 35px;
+	width: 98%;
+	margin: auto;
+	position: relative;
+	top: 85%;
+}
+
+#icons ul li{
+	display: inline-block;
+	list-style-type: none;
+	margin-left: 10px; 
+}
+
+#phoneicon {
+	background-color: green;
+	width: 35px;
+	height: 35px;
+	border-radius: 10px;
+}
+
+#phoneicon img {
+	position: relative;
+	top: 6px;
+	left: 5px;
+}
+
+#contacticon {
+	background-color: #000;
+	width: 35px;
+	height: 35px;
+	border-radius: 10px;
+}
+
+#contacticon img {
+	position: relative;
+	top: 6px;
+	left: 5px;
+}
+
+#calculatoricon {
+	background-color: grey;
+	width: 35px;
+	height: 35px;
+	border-radius: 10px;
+	position: relative;
+	left: 5px;
+}
+
+#calculatoricon img {
+	position: relative;
+	top: 4px;
+	left: 5px;
+	width: 25px;
+	height: 20px;
+}
+
+#gameicon {
+	background-color: blue;
+	width: 35px;
+	height: 35px;
+	border-radius: 10px;
+	position: relative;
+	left: 15px;
+}
+
+#gameicon img {
+	position: relative;
+	left: 3px;
+	width: 30px;
+	height: 30px;
+}
+
+#oprtdiv {
+	height: 20px;
+	width: 98%;
+	margin: auto;
+	position: relative;
+	top: 87%;
+}
+
+#oprtdiv ul {
+	display: inline-block;
+	width: 240px;
+	height: 100%;
+	line-height: 20px;
+}
+
+#oprtdiv ul li{
+	display: inline-block;
+	list-style-type: none;
+	margin-left: 10px; 
+}
+
+#pasticon {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	left: 40px;
+	top: -5px;
+}
+
+#pasticon img {
+	width: 20px;
+	height: 20px;
+}
+
+#gohome {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	left: 65px;
+	top: -5px;
+}
+
+#gohome img {
+	width: 20px;
+	height: 20px;
+}
+
+#backicon {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	left: 90px;
+	top: -5px;
+}
+
+#backicon img {
+	width: 20px;
+	height: 20px;
+}
+
+
+/*=====voucher generator=====*/
+#showvoucher,
+#showvouchern {
+	position: relative;
+	top: 20px;
+	width: 370px;
+	height: auto;
+	border: 1px solid #000;
+}
+
+#type,
+#typen {
+	display: inline-block;
+	width: 70px;
+	height: 20px;
+	text-align: center;
+	background-color: blue;
+	font-weight: bold;
+}
+
+#eachprice,
+#eachpricen {
+	display: inline-block;
+	width: 50px;
+	height: 20px;
+	text-align: center;
+	background-color: green;
+	font-weight: bold;
+}
+
+#eachvoucher,
+#eachvouchern {
+	display: inline-block;
+	width: 150px;
+	height: 20px;
+	text-align: center;
+	background-color: blue;
+	font-weight: bold;
+}
+
+
+#unused,
+#unusedn {
+	display: inline-block;
+	width: 70px;
+	height: 20px;
+	text-align: center;
+	background-color: green;
+	font-weight: bold;
+}
+
+
+/*=====dialing page=====*/
+#numbersdiv {
+	background-color: #fff;
+	height: 94%;
+	width: 100%;
+	display: none;
+}
+
+
+#bar {
+	background-color: blue;
+	height: 3%;
+}
+
+#bar ul {
+	float: right;
+}
+
+#bar ul li {
+	display: inline-block;
+	list-style-type: none;
+	height: 14px;
+}
+
+#bar img {
+	width: 10px;
+	height: 10px;
+	position: relative;
+	top: -7px;
+}
+
+#blank {
+	width: 100%;
+	height: 35%;
+}
+
+#dialdiv {
+	width: 100%;
+	height: 280px;
+	box-shadow: 1px 1px 5px #ccc, -1px 1px 5px #ccc; 
+}
+
+#inputdiv {
+	width: 100%;
+	height: 55px;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+}
+
+#showinput {
+	border: 1px solid #fff;
+	display: inline-block;
+	outline: none;
+	float: left;
+	height: 100%;
+	width: 210px;
+	text-align: center;
+	font-size: 1.5em;
+	color: blue;
+}
+
+#deletebutton {
+	float: right;
+	display: inline-block;
+	width: 35px;
+	height: 100%;
+	position: relative;
+	top: 12px;
+}
+
+#deletebutton img {
+	width: 25px;
+	height: 25px;
+}
+
+#numbersss {
+	width: 100%;
+	height: 215px;	
+}
+
+#numbersss #row1 input,
+#numbersss #row2 input,
+#numbersss #row3 input,
+#numbersss #row4 input {
+	width: 75px;
+	height: 40px;
+	border-radius: 5px;
+	outline: none;
+	background-color: #fff;
+	border: 1px solid #fff;
+}
+
+#callthrough {
+	background-color: green;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	position: relative;
+	left: 95px;
+	top: -5px;
+}
+
+#callthrough img {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	left: 10px;
+	top: 5px;
+}
+
+#accountbalancewrapper {
+	display: none;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	padding: 3px;
+	color: #000;
+	width: 72%;
+	margin: auto;
+	font-weight: bold;
+	font-size: 0.8em;
+	text-align: center;
+	height: 66px;
+	z-index: 1;
+	position: relative;
+	top: -70px;
+}
+
+#accountbalance {
+	height: 80%;
+}
+
+#ok {
+	height: 20%;
+}
+
+#oprtdivphonepage {
+	background-color: #fff;
+	height: 30px;
+	width: 100%;
+	margin: auto;
+	position: relative;
+	top: -15px;
+}
+
+#calcoprt {
+	height: 30px;
+	width: 100%;
+	margin: auto;
+	position: relative;
+	top: -28px;
+}
+
+#oprtdivphonepage ul,
+#calcoprt ul {
+	display: inline-block;
+	width: 240px;
+	height: 100%;
+	line-height: 20px;
+}
+
+#oprtdivphonepage ul li,
+#calcoprt ul li {
+	display: inline-block;
+	list-style-type: none;
+	margin-left: 10px; 
+}
+
+#pasticonphonepage,
+#pasticoncalcpage {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	left: 40px;
+	top: 2px;
+}
+
+#pasticonphonepage img,
+#pasticoncalcpage img {
+	width: 20px;
+	height: 20px;
+}
+
+#gohomephonepage,
+#gohomecalcpage{
+	width: 20px;
+	height: 20px;
+	position: relative;
+	left: 65px;
+	top: 2px;
+}
+
+#gohomephonepage img,
+#gohomecalcpage img {
+	width: 20px;
+	height: 20px;
+}
+
+#backiconphonepage,
+#backiconcalcpage {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	left: 90px;
+	top: 2px;
+}
+
+#backiconphonepage img,
+#backiconcalcpage {
+	width: 20px;
+	height: 20px;
+}
+
+
+
+/*=====call with part=====*/
+#selectsim {
+	height: 100%;
+	background-color: blue;
+	color: #000;
+	display: none;
+}
+
+#nothing {
+	height: 50%;
+	width: 100%;
+}
+
+#options {
+	height: 42%;
+	width: 100%;
+	background-color: #fff;
+	border-radius: 5px;
+	position: absolute;
+	z-index: 2;
+}
+
+#callwith {
+	font-weight: bold;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+	font-size: 0.7em;
+	height: 25px;
+	position: relative;
+	top: 7px;
+}
+
+#sim1,
+#sim2,
+#sim3,
+#sim4 {
+	height: 30px;
+	border-bottom: 1px solid #ccc;
+	font-size: 0.7em;
+	padding-left: 20px;
+}
+
+#sim1 span,
+#sim2 span,
+#sim3 span,
+#sim4 span {
+	border: 1px solid rgba(50, 204, 50, 255);
+	padding: 1px;
+	border-top-right-radius: 10px;
+	color: rgba(50, 204, 50, 255);
+	font-size: 1.2em;
+	position: relative;
+	top: 3px;
+}
+
+#sim1 p,
+#sim2 p,
+#sim3 p,
+#sim4 p {
+	display: inline-block;
+	font-weight: bold;
+	font-size: 0.9em;
+	margin-left: 10px;
+}
+
+
+/*=======call going through=======*/
+#dialing {
+	display: none;
+	background-color: rgba(8, 10, 216, 0.9);
+	width: 100%;
+	height: 100%;
+	color: #fff;
+}
+
+#dialingbarcontact {
+	height: 3%;
+}
+
+#dialingbarcontact ul {
+	float: right;
+}
+
+#dialingbarcontact ul li {
+	display: inline-block;
+	list-style-type: none;
+	height: 14px;
+}
+
+#dialingbarcontact img {
+	width: 10px;
+	height: 10px;
+	position: relative;
+	top: -7px;
+}
+
+#dialingcontact {
+	height: 80px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#dialingradius {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	border: 4px solid #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #3333ff;
+}
+
+#dialingcontactimg {
+	width: 50px;
+	width: 50px;
+}
+
+#dialnumber {
+	height: 35px;
+	font-size: 1.6em;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+#dialsimtype {
+	height: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#calling {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 15px;
+}
+
+
+#calling p {
+	font-size: 0.7em;
+	position: relative;
+	top: 8px;
+}
+
+
+#seccounter, 
+#ansseccounter {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 15px;
+}
+
+#seccounter #hr,
+#ansseccounter #anshr {
+	width: 15px;
+	height: 100%;
+	display: none;
+	font-size: 0.9em;
+}
+
+#seccounter #min,
+#ansseccounter #ansmin {
+	width: 17px;
+	height: 100%;
+	font-size: 0.9em;
+}
+
+#seccounter #sec,
+#ansseccounter #anssec {
+	width: 15px;
+	height: 100%;
+	font-size: 0.9em;
+}
+
+#speakerandothers {
+	width: 100%;
+	height: 45px;
+	position: relative;
+	top: 20px;
+}
+
+#speakerandothers ul {
+	display: flex;
+	flex-direction: row;
+	height: 45px;
+}
+
+
+#speakerandothers #muteicon {
+	position: relative;
+	left: 20px;
+	height: 45px;
+	width: 50px;
+}
+
+#speakerandothers #muteicon img {
+	width: 30px;
+	height: 30px;
+	position: relative;
+	left: 7px;
+}
+
+#speakerandothers #muteicon span {
+	font-size: 0.7em;
+	position: relative;
+	top: -5px;
+	left: 7px;
+}
+
+#speakerandothers #keypadicon {
+	position: relative;
+	left: 50px;
+	height: 45px;
+	width: 50px;
+}
+
+#speakerandothers #keypadicon img {
+	width: 30px;
+	height: 30px;
+	position: relative;
+	left: 10px;
+}
+
+#speakerandothers #keypadicon span {
+	font-size: 0.7em;
+	position: relative;
+	top: -5px;
+	left: 7px;
+
+}
+
+#speakerandothers #speakericon {
+	position: relative;
+	left: 80px;
+	height: 45px;
+	width: 50px;
+}
+
+#speakerandothers #speakericon img {
+	width: 30px;
+	height: 30px;
+	position: relative;
+	left: 10px;
+}
+
+#speakerandothers #speakericon span {
+	font-size: 0.7em;
+	position: relative;
+	top: -5px;
+	left: 7px;
+
+}
+
+#terminatecall {
+	width: 100%;
+	height: 45px;
+	position: relative;
+	top: 120px;
+}
+
+#terminatecall span {
+	background-color: red;
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	position: absolute;
+	left: 40%;
+}
+
+#terminatecall span img {
+	position: relative;
+	left: 10px;
+	top: 5px;
+} 
+
+/*=====call receiver=====*/
+#answerphone {
+	background-color: #f00;
+	height: 500px;
+	width: 282px;
+	position: relative;
+	top: 20px;
+	border-radius: 10px;
+	display: none;
+}
+
+#answerphonewrapper {
+	background-color: #000;
+	height: 492px;
+	width: 98%;
+	border-radius: 10px;
+	position: relative;
+	top: 3px;
+	left: 1%;
+}
+
+#answerphoneinner {
+	height: 430px;
+	position: relative;
+	top: 35px;
+	border-radius: 6px;	
+	background-image: url(images/aanswerbackground.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+#answerphonebar {
+	background-color: rgba(8, 10, 216, 0.9);
+	width: 100%;
+	height: 12px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+#answercall {
+	background-color: rgba(8, 10, 216, 0.9);
+	width: 100%;
+	height: 420px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+#answercontact {
+	height: 100px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#answerdialingradius {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	border: 4px solid #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #5DA1D5;
+}
+
+#answerdialcontactimg {
+	width: 50px;
+}
+
+#incoming {
+	width: 100%;
+	height: 25px;
+	font-size: 1.5em;
+	text-align: center;
+	font-weight: bold;
+	color: #fff;
+}
+
+#incoming p {
+	position: relative;
+	top: -6px;
+}
+
+#answernumber {
+	height: 25px;
+	font-size: 1.3em;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+
+#receiveorend {
+	position: relative;
+	top: 190px;
+	height: 40px;
+}
+
+#receivebtn {
+	background-color: green;
+	height: 40px;
+	position: absolute;
+	left: 80px;
+	width: 40px;
+	border-radius: 50%;
+}
+
+#receivebtn img {
+	position: relative;
+	top: 5px;
+	left: 7px;
+}
+
+#endbtn {
+	height: 40px;
+	background-color: red;
+	position: absolute;
+	left: 150px;
+	width: 40px;
+	border-radius: 50%;
+}
+
+#endbtn img {
+	position: relative;
+	top: 5px;
+	left: 7px;
+}
+
+#callanswered {
+	display: none;
+}
+
+#ansspeakerandothers {
+	width: 100%;
+	height: 45px;
+	position: relative;
+	top: 20px;
+}
+
+#ansspeakerandothers ul {
+	display: flex;
+	flex-direction: row;
+	height: 45px;
+}
+
+
+#ansspeakerandothers #ansmuteicon {
+	position: relative;
+	left: 20px;
+	height: 45px;
+	width: 50px;
+}
+
+#ansspeakerandothers #ansmuteicon img {
+	width: 30px;
+	height: 30px;
+	position: relative;
+	left: 7px;
+}
+
+#ansspeakerandothers #ansmuteicon span {
+	font-size: 0.7em;
+	position: relative;
+	top: -5px;
+	left: 7px;
+}
+
+#ansspeakerandothers #anskeypadicon {
+	position: relative;
+	left: 50px;
+	height: 45px;
+	width: 50px;
+}
+
+#ansspeakerandothers #anskeypadicon img {
+	width: 30px;
+	height: 30px;
+	position: relative;
+	left: 10px;
+}
+
+#ansspeakerandothers #anskeypadicon span {
+	font-size: 0.7em;
+	position: relative;
+	top: -5px;
+	left: 7px;
+
+}
+
+#ansspeakerandothers #ansspeakericon {
+	position: relative;
+	left: 80px;
+	height: 45px;
+	width: 50px;
+}
+
+#ansspeakerandothers #ansspeakericon img {
+	width: 30px;
+	height: 30px;
+	position: relative;
+	left: 10px;
+}
+
+#ansspeakerandothers #ansspeakericon span {
+	font-size: 0.7em;
+	position: relative;
+	top: -5px;
+	left: 7px;
+
+}
+
+#ansterminatecall {
+	width: 100%;
+	height: 45px;
+	position: relative;
+	top: 120px;
+}
+
+#ansterminatecall span {
+	background-color: red;
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	position: absolute;
+	left: 40%;
+}
+
+#ansterminatecall span img {
+	position: relative;
+	left: 10px;
+	top: 5px;
+} 
+
+
+/*------------------calculator starts here for phone----------*/
+#calcpage {
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+
+#calcbar {
+	background-color: #fff;
+	height: 3%;
+	width: 100%;
+}
+
+#calcwrapper {
+	background-color: #202731;
+	height: 97%;
+	width: 100%;
+}
+
+.displaydiv {
+	width: 98%;
+	position: relative;
+	left: 1%;
+	top: 5px;
+	height: 70px;
+	background-color: #000;
+	border: 2px solid #333C40;
+}
+
+.displaydiv .calculatearea {
+	height: 35px;
+	color: #fff;
+}
+
+.displaydiv .resultplace {
+	height: 35px;
+	color: #fff;
+	float: right;
+}
+
+.calcoperate {
+	position: relative;
+	top: 5px;		
+	height: 320px;
+	width: 100%;
+}
+
+
+/*=====the control buttons=====*/
+#shiftbutton {
+	position: relative;
+	left: 12px;
+}
+
+#alphabutton {
+	position: relative;
+	left: 15px;
+}
+
+#modebutton {
+	position: relative;
+	left: 35px;
+}
+
+#pointbutton {
+	position: relative;
+	left: 40px;
+	font-weight: bold;
+}
+
+.calcoperate .smallbutton {
+	font-size: 0.6em;
+	width: 28px;
+	height: 23px;
+	position: relative;
+	top: -11px;
+	border-radius: 48%;
+	background-color: #695EA2;
+	border: 1px solid #695EA2;
+	margin: 0px 3px 0px 0px;
+	color: #fff;
+}
+
+.calcoperate .bigbutton {
+	width: 60px;
+	height: 50px;
+	position: relative;
+	top: 15px;
+	left: 22px;
+	border-radius: 50%;
+	background-color: #695EA2;
+	border: 1px solid #695EA2;
+} 
+
+/*=====The scientific functions=====*/
+.scientific {
+	padding: 3px 0px;
+	position: relative;
+	top: -20px;
+}
+
+.scientifics {
+	width: 95%;
+	margin: auto;
+}
+
+.scientifics input {
+	width: 30px;
+	height: 23px;
+	font-size: 0.7em;
+	font-weight: bold;
+	margin-top: 10px;
+	border-bottom-left-radius: 70px;
+	border-bottom-right-radius: 70px;
+	border-top-left-radius: 100%50px;
+	border-top-right-radius: 100%50px;
+	background-color: #2C2D32;
+	color: #F6F7F7;
+	padding: 2px 0px;
+	margin-left: 5px;
+}
+
+
+/*=====the numbers and operators for operation=====*/
+.operandsandoperators {
+	height: 55%;	
+	position: relative;
+	top: -20px;
+}
+
+.numoperators {
+	width: 95%;
+	margin: auto;
+}
+
+.numoperators input {
+	width: 43px;
+	height: 28px;
+	font-size: 1.1em;
+	font-weight: bold;
+	margin-top: 8px;
+	border-bottom-left-radius: 70px;
+	border-bottom-right-radius: 70px;
+	border-top-left-radius: 100%50px;
+	border-top-right-radius: 100%50px;
+	background-color: #2C2D32;
+	color: #F6F7F7;
+}
+
+#delete, #clear {
+	background-color: #E88E4C;
+	color: #000;
+}

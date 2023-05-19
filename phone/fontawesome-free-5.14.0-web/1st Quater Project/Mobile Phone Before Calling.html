@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!-- saved from url=(0114)file:///C:/Users/AYOBAMI/Desktop/Vicky's%20programming/SQI%20Projects/Javascript/1st%20Quater%20Project/phone.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Mobile Phone</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./Mobile Phone Before Calling_files/bootstrap.css">
+	<script type="text/javascript" src="./Mobile Phone Before Calling_files/jquery.js.download"></script>
+	<script type="text/javascript" src="./Mobile Phone Before Calling_files/bootstrap.js.download"></script>
+	<link rel="stylesheet" type="text/css" href="./Mobile Phone Before Calling_files/phone.css">
+</head>
+<body onload="getAllVouchers()">
+
+<div class="container-fluid">
+	<div class="row" id="overall">
+		<!-- phone part -->
+		<div class="col-12 col-md-6" id="row1">
+
+			<!-- phone -->
+			<div id="container">
+				<div id="phonewrapper">
+
+					<!-- homepage -->
+					<div id="homepage">
+
+						<!-- simcard networks -->
+						<div id="simcards">
+							<ul>
+								<li><img src="./Mobile Phone Before Calling_files/signalicon.png" alt="signalicon"></li>
+								<li><img src="./Mobile Phone Before Calling_files/signalicon.png" alt="signalicon"></li>
+								<li><img src="./Mobile Phone Before Calling_files/signalicon.png" alt="signalicon"></li>
+								<li><img src="./Mobile Phone Before Calling_files/signalicon.png" alt="signalicon"></li>
+							</ul>
+						</div>
+
+						<!--homepage icons -->
+						<div id="icons">
+							<ul>
+								<li onclick="showDialPage()" id="phoneicon"><img src="./Mobile Phone Before Calling_files/phoneicon.png" alt="phoneicon"></li>
+								<li id="messageicon"><img src="./Mobile Phone Before Calling_files/messageicon.png" alt="messageicon"></li>
+								<li id="cameraicon"><img src="./Mobile Phone Before Calling_files/cameraicon.png" alt="cameraicon"></li>
+								<li id="contacticon"><img src="./Mobile Phone Before Calling_files/contacticon.png" alt="contacticon">	</li>
+							</ul>
+						</div>
+
+
+						<!-- dialing page -->
+						<div id="numbersdiv" style="display: none;">
+							<!-- bars that shows signals and other informations -->
+							<div id="bar"></div>
+
+							<!-- blank space above digits -->
+							<div id="blank"></div>
+
+							<!-- number's part -->
+							<div id="dialdiv">
+								
+								<!-- where digits input would display -->
+								<div id="inputdiv">
+									<!-- <div id="showinput"></div> -->
+									<input id="showinput" value="">
+									<div onclick="clearLast()" id="deletebutton"><img src="./Mobile Phone Before Calling_files/backarrowicon.png" alt="backarrow"></div>
+								</div>
+
+								<!-- where to press digits -->
+								<div id="numbersss">
+									<div id="row1">
+										<input type="button" value="1" onclick="showValue(1)">
+										<input type="button" value="2" onclick="showValue(2)">
+										<input type="button" value="3" onclick="showValue(3)">
+									</div>
+									<div id="row2">
+										<input type="button" value="4" onclick="showValue(4)">
+										<input type="button" value="5" onclick="showValue(5)">
+										<input type="button" value="6" onclick="showValue(6)">
+									</div>
+									<div id="row3">
+										<input type="button" value="7" onclick="showValue(7)">
+										<input type="button" value="8" onclick="showValue(8)">
+										<input type="button" value="9" onclick="showValue(9)">
+									</div>
+									<div id="row4">
+										<input type="button" value="*" onclick="showValue(&#39;*&#39;)">
+										<input type="button" value="0" onclick="showValue(0)">
+										<input type="button" value="#" onclick="showValue(&#39;#&#39;)">
+									</div>
+									<div onclick="rechargeOrCall()" id="callthrough">
+										<img src="./Mobile Phone Before Calling_files/phoneicon.png" alt="phoneicon">
+									</div>
+
+									<!-- your account balance box-->
+									<div id="accountbalancewrapper">
+										<div id="accountbalance"></div>
+										<p onclick="showNone()" id="ok">OK</p>
+									</div>
+								</div>  
+							</div>
+						</div>
+
+						<!-- select sim -->
+						<div id="selectsim" style="display: none;">
+							<div id="nothing">
+								
+							</div>
+
+							<!-- options -->
+							<div id="options">
+								<p id="callwith">Call with</p>
+								<div onclick="ifMtnFunc()" id="sim1">
+									<span>1</span>
+									<p>MTN</p>
+								</div>
+								<div onclick="ifAirtelFunc()" id="sim2">
+									<span>2</span>
+									<p>Airtel</p>
+								</div>
+								<div onclick="ifGloFunc()" id="sim3">
+									<span>3</span>
+									<p>GLO</p>
+								</div>
+								<div onclick="if9mobileFunc()" id="sim4">
+									<span>4</span>
+									<p>9 Mobile</p>
+								</div>
+								<!-- <p>Always use this for calls</p> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- airtime generator -->
+		<div class="col-12 col-md-6" id="row2">
+			<!-- generate card -->
+			<div id="generatecard">
+				<input type="number" value="" min="1" name="" id="input" placeholder="numbersofvoucher">
+
+				<select id="amount">
+					<option></option>
+					<option value="100">100</option>
+					<option value="200">200</option>
+					<option value="500">500</option>
+					<option value="1000">1000</option>
+				</select>
+
+				<select id="typer">
+					<option></option>
+					<option value="MTN">MTN</option>
+					<option value="Airtel">Airtel</option>
+					<option value="GLO">GLO</option>
+					<option value="9mobile">9 Mobile</option>
+				</select>
+
+				<button class="btn btn-sm btn-primary" onclick="display()">Generate</button>
+			</div>
+
+			<!-- where cards display -->
+			<div id="showvoucher" style="display: none;"></div>
+			<div id="showvouchern"><div id="typen">MTN</div><div id="eachpricen">100</div><div id="eachvouchern">6538331168755856</div><div id="unusedn">used</div><div id="typen">MTN</div><div id="eachpricen">100</div><div id="eachvouchern">6858261888802070</div><div id="unusedn">used</div><div id="typen">MTN</div><div id="eachpricen">100</div><div id="eachvouchern">4330763133182833</div><div id="unusedn">used</div><div id="typen">MTN</div><div id="eachpricen">100</div><div id="eachvouchern">5702081451517156</div><div id="unusedn">unused</div><div id="typen">GLO</div><div id="eachpricen">500</div><div id="eachvouchern">457311651136273</div><div id="unusedn">unused</div><div id="typen">GLO</div><div id="eachpricen">500</div><div id="eachvouchern">750208077578005</div><div id="unusedn">unused</div><div id="typen">GLO</div><div id="eachpricen">500</div><div id="eachvouchern">868607264226132</div><div id="unusedn">used</div><div id="typen">GLO</div><div id="eachpricen">500</div><div id="eachvouchern">187453741827017</div><div id="unusedn">unused</div><div id="typen">9mobile</div><div id="eachpricen">1000</div><div id="eachvouchern">172848103701632</div><div id="unusedn">unused</div><div id="typen">9mobile</div><div id="eachpricen">1000</div><div id="eachvouchern">515276812515110</div><div id="unusedn">unused</div><div id="typen">9mobile</div><div id="eachpricen">1000</div><div id="eachvouchern">002777308550405</div><div id="unusedn">used</div><div id="typen">Airtel</div><div id="eachpricen">200</div><div id="eachvouchern">503466116557</div><div id="unusedn">used</div><div id="typen">Airtel</div><div id="eachpricen">200</div><div id="eachvouchern">461634638244</div><div id="unusedn">used</div><div id="typen">Airtel</div><div id="eachpricen">200</div><div id="eachvouchern">005864256452</div><div id="unusedn">unused</div><div id="typen">Airtel</div><div id="eachpricen">200</div><div id="eachvouchern">611478068121</div><div id="unusedn">unused</div><div id="typen">Airtel</div><div id="eachpricen">200</div><div id="eachvouchern">084236023245</div><div id="unusedn">unused</div><div id="typen">Airtel</div><div id="eachpricen">200</div><div id="eachvouchern">460582528114</div><div id="unusedn">unused</div><div id="typen">Airtel</div><div id="eachpricen">200</div><div id="eachvouchern">130006787410</div><div id="unusedn">unused</div></div>
+		</div>
+	</div>
+</div>
+
+<script src="./Mobile Phone Before Calling_files/main.js.download" type="text/javascript"></script>
+
+</body></html>

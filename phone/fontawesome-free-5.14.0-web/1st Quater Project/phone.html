@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Mobile Phone</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.css">
+	<script type="text/javascript" src="bootstrap-4.3.1-dist/js/jquery.js"></script>
+	<script type="text/javascript" src="bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+	<link rel="stylesheet" type="text/css" href="phone.css">
+</head>
+<body onload="getAllVouchers()">
+
+<div class="container-fluid">
+	<div class="row" id="overall">
+		<!--===== phone part =====-->
+		<div class="col-12 col-md-4" id="row1">
+
+			<!--===== phone =====-->
+			<div class="row" id="container">
+				<div id="phonewrapper">
+
+					<!-- off page -->
+				<!-- 	<div id="offhomepage" ondblclick="goOn()">
+						
+					</div> -->
+
+					<!--===== homepage =====-->
+					<div id="homepage" ondblclick="goOff()">
+
+						<!--===== simcard networks =====-->
+						<div id="simcards">
+							<ul>
+								<li><img src="images/signalicon.png" alt="signalicon"></li>
+								<li><img src="images/signalicon.png" alt="signalicon"></li>
+								<li><img src="images/signalicon.png" alt="signalicon"></li>
+								<li><img src="images/signalicon.png" alt="signalicon"></li>
+							</ul>
+						</div>
+
+						<!--===== time and date =====-->
+						<div id="timewrapper">
+							<div id="timediv">
+								<div id="hour"></div>
+								<div id="minute"></div>
+								<div id="amOrpm"></div>
+							</div>
+							<div id="datediv">
+								<div id="day"></div>
+								<div id="month"></div>
+								<div id="date"></div>
+							</div>
+						</div>
+
+						<!--===== homepage icons =====-->
+						<div id="icons">
+							<ul>
+								<li onclick="showDialPage()" id="phoneicon"><img src="images/phoneicon.png" alt="phoneicon"></li>
+								<li id="contacticon"><img src="images/contacticon.png" alt="contacticon"></li>
+								<li onclick="showCalculator()" id="calculatoricon"><img src="images/calculatoricon.png" alt="calculatoricon"></li>
+						 		<li id="gameicon"><img src="images/gameicon.png" alt="gameicon"></li>
+							</ul>
+						</div>
+  						
+  						<!--===== back,  home and past button =====-->
+  						<div id="oprtdiv">
+  							<ul>
+  								<li id="pasticon">
+  									<img src="images/roundedrectangleicon.png" alt="roundedrectangleicon">
+  								</li>
+  								<li id="gohome">
+  									<img src="images/circlenotchedicon.png" alt="circlenotchedicon">
+  								</li>
+  								<li id="backicon">
+  									<img src="images/returnicon.png" alt="returnicon">
+  								</li>
+  							</ul>
+  						</div>
+
+						<!--===== dialing page =====-->
+						<div id="numbersdiv">
+							<!--===== bars that shows signals and other informations =====-->
+							<div id="bar">
+								<ul>
+									<li><img src="images/signalicon.png" alt="signalicon"></li>
+									<li><img src="images/signalicon.png" alt="signalicon"></li>
+									<li><img src="images/signalicon.png" alt="signalicon"></li>
+									<li><img src="images/signalicon.png" alt="signalicon"></li>
+								</ul>
+							</div>
+
+							<!--===== blank space above digits =====-->
+							<div id="blank"></div>
+
+							<!--===== number's part =====-->
+							<div id="dialdiv">
+								
+								<!--===== where digits input would display =====-->
+								<div id="inputdiv">
+									<input id="showinput" value="">
+									<div onclick="clearLast()" id="deletebutton"><img src="images/backarrowicon.png" alt="backarrow"></div>
+								</div>
+
+								<!--======= where to press digits =======-->
+								<div id="numbersss">
+									<div id="row1">
+										<input type="button" value="1" onclick="showValuee(1)">
+										<input type="button" value="2" onclick="showValuee(2)">
+										<input type="button" value="3" onclick="showValuee(3)">
+									</div>
+									<div id="row2">
+										<input type="button" value="4" onclick="showValuee(4)">
+										<input type="button" value="5" onclick="showValuee(5)">
+										<input type="button" value="6" onclick="showValuee(6)">
+									</div>
+									<div id="row3">
+										<input type="button" value="7" onclick="showValuee(7)">
+										<input type="button" value="8" onclick="showValuee(8)">
+										<input type="button" value="9" onclick="showValuee(9)">
+									</div>
+									<div id="row4">
+										<input type="button" value="*" onclick="showValuee('*')">
+										<input type="button" value="0" onclick="showValuee(0)">
+										<input type="button" value="#" onclick="showValuee('#')">
+									</div>
+									<div onclick="rechargeOrCall()" id="callthrough">
+										<img src="images/phoneicon.png" alt="phoneicon">
+									</div>
+
+									<!--======= your account balance box =======-->
+									<div id="accountbalancewrapper">
+										<div id="accountbalance"></div>
+										<p onclick="showNone()" id="ok">OK</p>
+									</div>
+								</div>
+
+								<!--======= past, home and back icons =======-->
+								<div id="oprtdivphonepage">
+  									<ul>
+  										<li id="pasticonphonepage">
+  											<img src="images/roundedrectangleblackicon.png" alt="roundedrectangleicon">
+  										</li>
+  										<li id="gohomephonepage">
+  											<img onclick="goToHomePage()" src="images/circlenotchedblackicon.png" alt="circlenotchedicon">
+  										</li>
+  										<li id="backiconphonepage">
+  											<img src="images/sortleftblackicon.png" alt="returnicon">
+  										</li>
+  									</ul>
+  								</div>
+							</div>
+						</div>
+
+						<!--======= select sim =======-->
+						<div id="selectsim">
+							<div id="nothing">
+								
+							</div>
+
+							<!--======= options =======-->
+							<div id="options">
+								<p id="callwith">Call with</p>
+								<div onclick="ifMtnFunc()" id="sim1">
+									<span>1</span>
+									<p>MTN</p>
+								</div>
+								<div onclick="ifAirtelFunc()" id="sim2">
+									<span>2</span>
+									<p>Airtel</p>
+								</div>
+								<div onclick="ifGloFunc()" id="sim3">
+									<span>3</span>
+									<p>GLO</p>
+								</div>
+								<div onclick="if9mobileFunc()" id="sim4">
+									<span>4</span>
+									<p>9 Mobile</p>
+								</div>
+								<!-- <p>Always use this for calls</p> -->
+							</div> 
+						</div>
+
+
+						<!--======= making call =======-->
+						<div id="dialing">
+							<div id="dialingbarcontact">
+								<ul>
+									<li><img src="images/signalicon.png" alt="signalicon"></li>
+									<li><img src="images/signalicon.png" alt="signalicon"></li>
+									<li><img src="images/signalicon.png" alt="signalicon"></li>
+									<li><img src="images/signalicon.png" alt="signalicon"></li>
+								</ul>
+							</div>
+
+							<div id="dialingcontact">
+								<div id="dialingradius">
+									<img id="dialingcontactimg" src="images/lightcontacticon.png" alt="contacticon">
+								</div>
+							</div>
+
+							<div id="dialnumber"></div>
+
+							<div id="dialsimtype"></div>
+
+							<div id="calling">
+								<p>Calling...</p>
+							</div>
+
+							<div id="seccounter">
+								<span id="hr"></span>
+								<span id="min"></span>
+								<span id="sec"></span>
+							</div>
+
+							<div id="speakerandothers">
+								<ul>
+									<li id="muteicon">
+										<img src="images/muteicon.png" alt="muteicon">
+										<span>Mute</span>
+									</li>
+									<li id="keypadicon">
+										<img src="images/keypadicon.png" alt="keypadicon">
+										<span>Keypad</span>
+									</li>
+									<li id="speakericon">
+										<img src="images/speakericon.png" alt="speakericon">
+										<span>Speaker</span>
+									</li>
+								</ul>
+							</div>
+
+							<div id="terminatecall">
+								<span onclick="myEndCall()">
+									<img src="images/phoneicon.png" alt="contacticon">
+								</span>
+							</div>
+						</div>
+
+						<!--======= calculatorpage for the phone =======-->
+						<div id="calcpage">
+
+							<!--======= network bar =======-->
+							<div id="calcbar"></div>
+
+							<!--======= calculator itself =======-->
+							<div id="calcwrapper">
+								
+								<!--======= display div =======-->
+								<div class="displaydiv">
+									<div class="calculatearea" id="calculatearea"></div>
+									<div class="resultplace" id="result">0</div>
+								</div>
+
+								<!--======= operation div =======-->
+								<div class="calcoperate">
+									<!--======= the control buttons below the functions =======-->
+									<button class="smallbutton" id="shiftbutton">Shift</button>
+									<button  class="smallbutton" id="alphabutton" >Alpha</button>
+									<button  class="bigbutton"></button>
+									<button  class="smallbutton" id="modebutton">Mode</button>
+									<button  class="smallbutton" id="pointbutton">.</button>
+
+									<!--======= where the scientific operators are...cos and co.. =======-->
+									<div class="scientific">
+										<div class="scientifics">
+											<input type="button" name="" value="Abs">
+											<input type="button" name="" value="#">
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<input type="button" name="" value="#">
+											<input type="button" name="" value="log">
+										</div>
+										<div class="scientifics">
+											<input type="button" name="" value="#">
+											<input type="button" name="" value="#">
+											<input type="button" name="" value="#">
+											<input type="button" name="" value="#">
+											<input type="button" name="" value="log" onclick="showScientific('log(')">
+											<input type="button" name="" value="In" onclick="showScientific('In(')">
+										</div>
+										<div class="scientifics">
+											<input type="button" name="" value="(-)">
+											<input type="button" name="" value="#">
+											<input type="button" name="" value="hyp">
+											<input type="button" name="" value="sin" id="scien" onclick="showScientific('sin(')">
+											<input type="button" name="" value="cos" id="scien" onclick="showScientific('cos(')">
+											<input type="button" name="" value="tan" id="scien" onclick="showScientific('tan(')">
+										</div>
+										<div class="scientifics">
+											<input type="button" name="" value="RCL">
+											<input type="button" name="" value="ENG">
+											<input type="button" name="" value="(" id="value" onclick="showValue('(')">
+											<input type="button" name="" value=")" id="value" onclick="showValue(')')">
+											<input type="button" name="" value="S=D">
+											<input type="button" name="" value="M+">
+										</div>
+									</div>
+
+									<!--======= section where the numbers and the operators are =======--> 
+									<div class="operandsandoperators">
+										<div class="numoperators">
+											<input type="button" name=""  value="7" id="value" onclick="showValue(7)">
+											<input type="button" name=""  value="8" id="value" onclick="showValue(8)">
+											<input type="button" name=""  value="9" id="value" onclick="showValue(9)">
+											<input type="button" name="" value="DEL" id="delete" onclick="removeLastValue()">
+											<input type="button" name="" value="AC" id="clear" onclick="clearOperation()">
+											</div>
+										<div class="numoperators">
+											<input type="button" name=""  value="4" id="value" onclick="showValue(4)">
+											<input type="button" name=""  value="5" id="value" onclick="showValue(5)">
+											<input type="button" name=""  value="6" id="value" onclick="showValue(6)">
+											<input type="button" name="" value="x" id="value" onclick="showValue('*')">
+											<input type="button" name="" value="/" id="value" onclick="showValue('/')">
+										</div>
+										<div class="numoperators">
+											<input type="button" name="" value="1" id="value" onclick="showValue(1)">
+												<input type="button" name=""  value="2" id="value" onclick="showValue(2)">
+											<input type="button" name=""  value="3" id="value" onclick="showValue(3)">
+											<input type="button" name="" value="+" id="value" onclick="showValue('+')">
+											<input type="button" name="" value="-" id="value" onclick="showValue('-')">
+										</div>
+										<div class="numoperators">
+											<input type="button" name=""  value="0" id="value" onclick="showValue(0)">
+											<input type="button" name=""  value="." id="value" onclick="showValue(.)">
+											<input type="button" name="" value="x10" >
+											<input type="button" name="" value="Ans">
+											<input type="button" name="" value="=" id="equal" onclick="equalto()">
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!--======= back, home button =======-->
+							<div id="calcoprt">
+								<ul>
+  									<li id="pasticoncalcpage">
+  										<img src="images/roundedrectangleicon.png" alt="roundedrectangleicon">
+  									</li>
+  									<li id="gohomecalcpage">
+  										<img onclick="goToHomeFromCalcPage()" src="images/circlenotchedicon.png" alt="circlenotchedicon">
+  										</li>
+  									<li id="backiconcalcpage">
+  										<img src="images/returnicon.png" alt="returnicon">
+  									</li>
+  								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		<!--======= call receiver =======-->
+		<div class="col-12 col-md-4">
+			<div id="answerphone">
+				<div id="answerphonewrapper">
+				<div id="answerphoneinner">
+					<div id="answerphonebar">
+						
+					</div>
+					<div id="answercall">
+						<div id="answercontact">
+							<div id="answerdialingradius">
+								<img id="answerdialingcontactimg" src="images/lightcontacticon.png" alt="contacticon">
+							</div>
+						</div>
+						<div id="incoming">
+							<p>Incoming Call</p>
+						</div>
+						<div id="answernumber">
+							
+						</div>
+						<div id="ansseccounter">
+							<span id="anshr"></span>
+							<span id="ansmin"></span>
+							<span id="anssec"></span>
+						</div>
+
+						<div id="receiveorend">
+							<span onclick="receiveCall()" id="receivebtn">
+								<img src="images/phoneicon.png" alt="receivecall">
+							</span>
+							<span onclick="dontReceiveCall()" id="endbtn">
+								<img src="images/phoneicon.png" alt="endcall">
+							</span>
+						</div>
+
+						<!--======= when call is picked =======-->
+						<div id="callanswered">
+							<div id="ansspeakerandothers">
+								<ul>
+									<li id="ansmuteicon">
+										<img src="images/muteicon.png" alt="muteicon">
+										<span>Mute</span>
+									</li>
+									<li id="anskeypadicon">
+										<img src="images/keypadicon.png" alt="keypadicon">
+										<span>Keypad</span>
+									</li>
+									<li id="ansspeakericon">
+										<img src="images/speakericon.png" alt="speakericon">
+										<span>Speaker</span>
+									</li>
+								</ul>
+							</div>
+
+							<div id="ansterminatecall">
+								<span onclick="endCall()">
+									<img src="images/phoneicon.png" alt="contacticon">
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+
+
+			</div>
+		</div>
+
+
+		<!--======= airtime generator =======-->
+		<div class="col-12 col-md-4" id="row2">
+			<!--======= generate card =======-->
+			<div id="generatecard">
+				<input type="number" value="" min="1" name="" id="input" placeholder="numbersofvoucher">
+
+				<select id="amount">
+					<option></option>
+					<option value="100">100</option>
+					<option value="200">200</option>
+					<option value="500">500</option>
+					<option value="1000">1000</option>
+				</select>
+
+				<select id="typer">
+					<option></option>
+					<option value="MTN">MTN</option>
+					<option value="Airtel">Airtel</option>
+					<option value="GLO">GLO</option>
+					<option value="9mobile">9 Mobile</option>
+				</select>
+
+				<button class="btn btn-sm btn-primary" onclick="display()">Generate</button>
+			</div>
+
+			<!--======= where cards display =======-->
+			<div id="showvoucher"></div>
+			<div id="showvouchern"></div>
+		</div>
+	</div>
+</div>
+
+<script src="main.js" type="text/javascript"></script>
+<script src="time.js" type="text/javascript"></script>
+</body>
+</html>

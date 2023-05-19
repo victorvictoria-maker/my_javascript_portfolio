@@ -1,0 +1,378 @@
+numbersdiv.style.display = "none";
+selectsim.style.display = "none";
+
+// function goOff() {
+// 	if (homepage.style.display != "none") {
+// 		homepage.style.display = "none";
+// 	} else {
+// 		homepage.style.display != "none";
+// 	}
+// }
+if (localStorage.vouchers == null) {
+	localStorage.setItem("vouchers", "");
+}
+// console.log(localStorage.getItem("balance"))
+if (typeof(localStorage.getItem("balance")) !== "string" || localStorage.getItem("balance") == "") {
+	var getBalanceArr = [];
+	var balanceObj = {mtnbalance: "0", airtelbalance: "0", globalance: "0", lastbalance: "0"};
+	getBalanceArr.push(balanceObj);
+	localStorage.setItem("balance", JSON.stringify(getBalanceArr));
+}
+
+function getAllVouchers() {
+	if (localStorage.vouchers != "") {
+		var getget = JSON.parse(localStorage.getItem("vouchers"));
+		for (var i = 0; i < getget.length; i++) {
+			var gaga = (getget[i]);
+
+			var nini = document.createElement("div");
+			nini.id = "typen"
+			nini.innerHTML = gaga.Network;
+
+			var cici = document.createElement("div");
+			cici.id = "eachpricen";
+			cici.innerHTML = gaga.Amount;
+
+			var didi = document.createElement("div");
+			didi.id = "eachvouchern";
+			didi.innerHTML = gaga.Codes;
+
+			var bibi = document.createElement("div");
+			bibi.id = "unusedn"
+			bibi.innerHTML = gaga.status;
+
+			document.querySelector("#showvouchern").appendChild(nini);
+			document.querySelector("#showvouchern").appendChild(cici);
+			document.querySelector("#showvouchern").appendChild(didi);
+			document.querySelector("#showvouchern").appendChild(bibi);
+		}
+	}
+}
+
+function showDialPage() {
+	icons.style.display = "none";
+	simcards.style.display = "none";
+	numbersdiv.style.display = "block";
+}
+showvoucher.style.display="none";
+
+function showValue(value) {
+	var val = value;
+	showinput.value += val;
+}
+
+function clearLast() {
+	showinput.value = showinput.value.substr(0,showinput.value.length-1)
+}
+
+function rechargeOrCall() {
+	numbersdiv.style.display = "none";
+	selectsim.style.display = "block";
+}
+
+function ifMtnFunc() {
+		numbersdiv.style.display = "block";
+		selectsim.style.display = "none";
+	if (showinput.value.length == 22) {
+		var getGet = JSON.parse(localStorage.getItem("vouchers"));
+		var getBalanceArr = JSON.parse(localStorage.getItem("balance"));
+		for (var i = 0; i < getGet.length; i++) {
+			var tikTok = getGet[i].Codes;
+			if (
+				(showinput.value.slice(0,5) == "*555*") &&
+				(tikTok.search(showinput.value.slice(5,21)) != -1) &&
+				(showinput.value.slice(21,22) == "#") && 
+				(getGet[i].Network == "MTN") &&
+				(getGet[i].status == "unused")
+				) {
+					var pop = getGet[i].Amount;
+					var showLoad = "You have loaded " +pop+ " MTN airtime successfully!";
+					accountbalancewrapper.style.display = "block";
+					accountbalance.innerHTML = showLoad;
+					getGet[i].status = "used";
+
+					var getBalance = getBalanceArr[0].mtnbalance;
+					var newBalance = parseInt(getBalance) + parseInt(pop);
+					getBalanceArr[0].mtnbalance = parseInt(newBalance);
+
+					localStorage.setItem("balance", JSON.stringify(getBalanceArr));
+					localStorage.setItem("vouchers", JSON.stringify(getGet));
+			} else if(
+				(showinput.value.slice(0,5) == "*555*") &&
+				(tikTok.search(showinput.value.slice(5,21)) != -1) &&
+				(showinput.value.slice(21,22) == "#") && 
+				(getGet[i].Network == "MTN") &&
+				(getGet[i].status == "used")
+				) {
+				alert("This voucher has been used already by you");
+			}
+		}
+	} else if (showinput.value == "*556#") {
+		var getBalanceFromStore = JSON.parse(localStorage.getItem("balance"));
+		var getMtnBalanceStr = getBalanceFromStore[0].mtnbalance;
+		accountbalancewrapper.style.display = "block";
+		accountbalance.innerHTML = "Dear customer, your account balance is #" +	getMtnBalanceStr;
+	}else {
+		alert("Invalid Operation");
+	}
+}
+
+
+function ifAirtelFunc() {
+		numbersdiv.style.display = "block";
+		selectsim.style.display = "none";
+	if (showinput.value.length == 18) {
+		var getGet = JSON.parse(localStorage.getItem("vouchers"));
+		var getBalanceArr = JSON.parse(localStorage.getItem("balance"));
+		for (var i = 0; i < getGet.length; i++) {
+			var tikTok = getGet[i].Codes;
+			if (
+				(showinput.value.slice(0,5) == "*126*") &&
+				(tikTok.search(showinput.value.slice(5,17)) != -1) &&
+				(showinput.value.slice(17,18) == "#") && 
+				(getGet[i].Network == "Airtel") &&
+				(getGet[i].status == "unused")
+				) {
+					var pop = getGet[i].Amount;
+					var showLoad = "You have loaded " +pop+ " Airtel airtime successfully!";
+					accountbalancewrapper.style.display = "block";
+					accountbalance.innerHTML = showLoad;
+					getGet[i].status = "used";
+
+					var getBalance = getBalanceArr[0].airtelbalance;
+					var newBalance = parseInt(getBalance) + parseInt(pop);
+					getBalanceArr[0].airtelbalance = newBalance;
+
+					localStorage.setItem("balance", JSON.stringify(getBalanceArr));
+					localStorage.setItem("vouchers", JSON.stringify(getGet))
+			} else if(
+				(showinput.value.slice(0,5) == "*555*") &&
+				(tikTok.search(showinput.value.slice(5,17)) != -1) &&
+				(showinput.value.slice(17,18) == "#") && 
+				(getGet[i].Network == "Airtel") &&
+				(getGet[i].status == "used")
+				) {
+				alert("This voucher has been used already by you");
+			}
+		}
+
+	} else if (showinput.value == "*123#") {
+		var getBalanceFromStore = JSON.parse(localStorage.getItem("balance"));
+		var getMtnBalanceStr = getBalanceFromStore[0].airtelbalance;
+		accountbalancewrapper.style.display = "block";
+		accountbalance.innerHTML = "Dear customer, your account balance is #" +	getMtnBalanceStr;
+	} else {
+		alert("Invalid Operation");
+	}
+}
+
+
+function ifGloFunc() {
+		numbersdiv.style.display = "block";
+		selectsim.style.display = "none";
+	if (showinput.value.length == 21) {
+		var getGet = JSON.parse(localStorage.getItem("vouchers"));
+		var getBalanceArr = JSON.parse(localStorage.getItem("balance"));
+		for (var i = 0; i < getGet.length; i++) {
+			var tikTok = getGet[i].Codes;
+			if (
+				(showinput.value.slice(0,5) == "*123*") &&
+				(tikTok.search(showinput.value.slice(5,20)) != -1) &&
+				(showinput.value.slice(20,21) == "#") && 
+				(getGet[i].Network == "GLO") &&
+				(getGet[i].status == "unused")
+				) {
+					var pop = getGet[i].Amount;
+					var showLoad = "You have loaded " +pop+ " GLO airtime successfully!";
+					accountbalancewrapper.style.display = "block";
+					accountbalance.innerHTML = showLoad;
+					getGet[i].status = "used";
+
+					var getBalance = getBalanceArr[0].globalance;
+					var newBalance = parseInt(getBalance) + parseInt(pop);
+					getBalanceArr[0].globalance = newBalance;
+
+					localStorage.setItem("balance", JSON.stringify(getBalanceArr));
+					localStorage.setItem("vouchers", JSON.stringify(getGet));
+			} else if(
+				(showinput.value.slice(0,5) == "*555*") &&
+				(tikTok.search(showinput.value.slice(5,20)) != -1) &&
+				(showinput.value.slice(20,21) == "#") && 
+				(getGet[i].Network == "GLO") &&
+				(getGet[i].status == "used")
+				) {
+				alert("This voucher has been used already by you");
+			}
+		}
+	} else if (showinput.value == "*124#") {
+		var getBalanceFromStore = JSON.parse(localStorage.getItem("balance"));
+		var getMtnBalanceStr = getBalanceFromStore[0].globalance;
+		accountbalancewrapper.style.display = "block";
+		accountbalance.innerHTML = "Dear customer, your account balance is #" +	getMtnBalanceStr;
+	} else {
+		alert("Invalid Operation");
+	}
+}
+
+
+function if9mobileFunc() {
+		numbersdiv.style.display = "block";
+		selectsim.style.display = "none";
+	if (showinput.value.length == 21) {
+		var getGet = JSON.parse(localStorage.getItem("vouchers"));
+		var getBalanceArr = JSON.parse(localStorage.getItem("balance"));
+		for (var i = 0; i < getGet.length; i++) {
+			var tikTok = getGet[i].Codes;
+			if (
+				(showinput.value.slice(0,5) == "*222*") &&
+				(tikTok.search(showinput.value.slice(5,20)) != -1) &&
+				(showinput.value.slice(20,21) == "#") && 
+				(getGet[i].Network == "9mobile") &&
+				(getGet[i].status == "unused")
+				) {
+					var pop = getGet[i].Amount;
+					var showLoad = "You have loaded " +pop+ " 9mobile airtime successfully!";
+					accountbalancewrapper.style.display = "block";
+					accountbalance.innerHTML = showLoad;
+					getGet[i].status = "used";
+
+					var getBalance = getBalanceArr[0].lastbalance;
+					var newBalance = parseInt(getBalance) + parseInt(pop);
+					getBalanceArr[0].lastbalance = newBalance;
+
+					localStorage.setItem("balance", JSON.stringify(getBalanceArr));
+					localStorage.setItem("vouchers", JSON.stringify(getGet));
+			} else if(
+				(showinput.value.slice(0,5) == "*555*") &&
+				(tikTok.search(showinput.value.slice(5,20)) != -1) &&
+				(showinput.value.slice(20,21) == "#") && 
+				(getGet[i].Network == "9mobile") &&
+				(getGet[i].status == "used")
+				) {
+				alert("This voucher has been used already by you");
+			}
+		}
+	} else if (showinput.value == "*232#") {
+		var getBalanceFromStore = JSON.parse(localStorage.getItem("balance"));
+		var getMtnBalanceStr = getBalanceFromStore[0].lastbalance;
+		accountbalancewrapper.style.display = "block";
+		accountbalance.innerHTML = "Dear customer, your account balance is #" +	getMtnBalanceStr;	
+	} else {
+		alert("Invalid Operation");
+	}
+}
+
+
+
+// card generator
+var xoxo = [];
+function display() {
+
+	showvoucher.style.display="block";
+	
+	var tata = input.value;
+	var lala = amount.value;
+	var kaka = typer.value;
+
+	if (tata == "" && lala == "" && kaka == "" ) {
+		alert("Please, input the necessary informations for the vouchers to be generated!");
+	} else if (tata == "" && lala != "" && kaka != "" ) {
+		alert("Please, input the number of vouchers you want to buy");
+	} else if (tata != "" && lala == "" && kaka != "" ) {
+		alert("Please, input the price for the vouchers you would like to purchase");
+	} else if (tata != "" && lala != "" && kaka == "" ) {
+		alert("Please, input the type of vouchers you want to buy");
+	} else {
+
+		if(localStorage.vouchers != ""){
+			if(typeof(localStorage.getItem("vouchers")) == "string"){
+				xoxo = JSON.parse(localStorage.getItem("vouchers"));
+			} else {
+				xoxo = []
+			};
+		}
+
+		for (var i = 1; i <= tata; i++) {
+		var aaa = Math.floor(Math.random() * 9);
+		var bbb = Math.floor(Math.random() * 9);
+		var ccc = Math.floor(Math.random() * 9);
+		var ddd = Math.floor(Math.random() * 9);
+		var eee = Math.floor(Math.random() * 9);		
+		var fff = Math.floor(Math.random() * 9);
+		var ggg = Math.floor(Math.random() * 9);
+		var hhh = Math.floor(Math.random() * 9);
+		var iii = Math.floor(Math.random() * 9);
+		var jjj = Math.floor(Math.random() * 9);
+		var kkk = Math.floor(Math.random() * 9);
+		var lll = Math.floor(Math.random() * 9);
+		var mmm = Math.floor(Math.random() * 9);
+		var nnn = Math.floor(Math.random() * 9);
+		var ooo = Math.floor(Math.random() * 9);
+		var ppp = Math.floor(Math.random() * 9);
+
+
+		var nini = document.createElement("div");
+		nini.id = "type"
+
+		var cici = document.createElement("div");
+		cici.id = "eachprice";
+
+		var bibi = document.createElement("div");
+		bibi.innerHTML = "unused"
+		bibi.id = "unused"
+
+		var didi = document.createElement("div");
+		didi.id = "eachvoucher";
+
+			if (kaka == "MTN") {
+				var mama = aaa+""+bbb+""+ccc+""+ddd+""+eee+""+fff+""+ggg+""+hhh+""+iii+""+jjj+""+kkk+""+lll+""+mmm+""+nnn+""+ooo+""+ppp;
+				nini.innerHTML = kaka;
+				cici.innerHTML= lala;
+				didi.innerHTML = mama;
+			} 
+
+			if (kaka == "Airtel") {
+				var mama = aaa+""+bbb+""+ccc+""+ddd+""+eee+""+fff+""+ggg+""+hhh+""+iii+""+jjj+""+kkk+""+lll;
+				nini.innerHTML = kaka;
+				cici.innerHTML= lala;
+				didi.innerHTML = mama;
+			}
+
+			if (kaka == "GLO") {
+				var mama = aaa+""+bbb+""+ccc+""+ddd+""+eee+""+fff+""+ggg+""+hhh+""+iii+""+jjj+""+kkk+""+lll+""+mmm+""+nnn+""+ooo;
+				nini.innerHTML = kaka;
+				cici.innerHTML= lala;
+				didi.innerHTML = mama;
+			}
+
+			if (kaka == "9mobile") {
+				var mama = aaa+""+bbb+""+ccc+""+ddd+""+eee+""+fff+""+ggg+""+hhh+""+iii+""+jjj+""+kkk+""+lll+""+mmm+""+nnn+""+ooo;
+				nini.innerHTML = kaka;
+				cici.innerHTML= lala;
+				didi.innerHTML = mama;
+			}
+			document.querySelector("#showvoucher").appendChild(nini);
+			document.querySelector("#showvoucher").appendChild(cici);
+			document.querySelector("#showvoucher").appendChild(didi);
+			document.querySelector("#showvoucher").appendChild(bibi);
+
+			var yinyin = {Network: typer.value, Amount: amount.value, Codes: didi.innerHTML, status: "unused"};
+			xoxo.push(yinyin);
+			localStorage.setItem("vouchers", JSON.stringify(xoxo));
+		}
+	}
+}
+
+function showNone() {
+	accountbalancewrapper.style.display = "none";
+	showinput.value = "";
+}
+ 
+// function teachsclice (){
+// 	var kk = "*555*teachmesliceueygfdyugevchvefvufoeu#"
+// 	var bb = kk.slice(0,5)
+// 	var ff = kk.slice(-1)
+// 	console.log(ff)
+// }
+
+// teachsclice();
